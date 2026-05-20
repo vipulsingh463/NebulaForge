@@ -2,8 +2,14 @@ trigger: none
 
 pool: OrionPool
 
-steps:
-- task: TerraformInstaller@1
-  inputs:
-    terraformVersion: 'latest'
+stages:
+  - stage: Build
+    displayName: TerraformInitPlan
+    jobs:
+    - job: Terraforminstall
+      steps:
+      - task: TerraformInstaller@1
+        inputs:
+          terraformVersion: 'latest'
 
+      
