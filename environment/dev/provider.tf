@@ -1,16 +1,17 @@
 terraform {
-  required_providers {
-    azurerm = {
-      source  = "hashicorp/azurerm"
-      version = "4.59.0"
+    required_providers {
+      azurerm = {
+        source = "hashicorp/azurerm"
+        version = "4.73.0"
+      }
     }
-  }
     backend "azurerm" {
     resource_group_name  = "rg-dev"
     storage_account_name = "storion"
     container_name       = "storionc"
     key                  = "terraform.tfstate"
   }
+
 }
 
 provider "azurerm" {
